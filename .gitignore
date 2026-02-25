@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+FEATURE_SUMMARY.md
+IMPLEMENTATION_COMPLETE.md
+MOBILE_IMPROVEMENTS.md
