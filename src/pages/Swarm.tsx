@@ -79,7 +79,7 @@ function LogsModal({ taskId, onClose }: LogsModalProps) {
       setError("Not connected");
       return;
     }
-    ws.request<SwarmLogsResult>("swarm.logs", { id: taskId })
+    ws.request<SwarmLogsResult>("swarm.logs", { taskId })
       .then((result) => setLogs(result.logs ?? ""))
       .catch((err: unknown) => {
         setError(err instanceof Error ? err.message : String(err));
@@ -195,7 +195,7 @@ export default function Swarm() {
       setKillingId(task.id);
       setKillError(null);
       try {
-        await ws.request("swarm.kill", { id: task.id });
+        await ws.request("swarm.kill", { taskId: task.id });
         swarmReq.refetch();
       } catch (err: unknown) {
         setKillError(err instanceof Error ? err.message : String(err));
