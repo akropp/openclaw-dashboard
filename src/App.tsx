@@ -5,6 +5,7 @@ import { ConnectScreen } from "./components/ConnectScreen";
 import Overview from "./pages/Overview";
 import Agents from "./pages/Agents";
 import Sessions from "./pages/Sessions";
+import Swarm from "./pages/Swarm";
 import Usage from "./pages/Usage";
 import CronJobs from "./pages/CronJobs";
 import Models from "./pages/Models";
@@ -23,6 +24,7 @@ export function App() {
         <Route index element={<Overview />} />
         <Route path="agents" element={<Agents />} />
         <Route path="sessions" element={<Sessions />} />
+        <Route path="swarm" element={<Swarm />} />
         <Route path="usage" element={<Usage />} />
         <Route path="cron" element={<CronJobs />} />
         <Route path="models" element={<Models />} />
