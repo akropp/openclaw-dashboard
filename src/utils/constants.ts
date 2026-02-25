@@ -6,6 +6,7 @@ export const NAV_ITEMS = [
   { path: "/", label: "Overview", icon: "home" },
   { path: "/agents", label: "Agents", icon: "cpu" },
   { path: "/sessions", label: "Sessions", icon: "messages" },
+  { path: "/swarm", label: "Coder Swarm", icon: "swarm" },
   { path: "/usage", label: "Usage & Costs", icon: "chart" },
   { path: "/cron", label: "Cron Jobs", icon: "clock" },
   { path: "/models", label: "Models", icon: "layers" },

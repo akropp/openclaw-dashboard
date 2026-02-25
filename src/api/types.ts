@@ -219,3 +219,58 @@ export interface SystemPresence {
   }>;
   [key: string]: unknown;
 }
+
+// swarm.list / swarm.kill / swarm.logs
+export interface SwarmTask {
+  id: string;
+  agent: string; // "codex" | "claude" | "gemini" | etc.
+  status: "running" | "done" | "failed" | string;
+  repo?: string;
+  description?: string;
+  startedAt?: string;
+  completedAt?: string;
+  pr?: string | number; // PR number or URL
+  prUrl?: string;
+  worktreePath?: string;
+  ciPassed?: boolean;
+  error?: string;
+}
+
+export interface SwarmListResult {
+  tasks: SwarmTask[];
+  total?: number;
+}
+
+export interface SwarmLogsResult {
+  logs: string;
+  taskId?: string;
+}
+
+export interface SwarmKillResult {
+  ok: boolean;
+  message?: string;
+}
+
+// provider.usage
+export interface ProviderQuota {
+  limit?: number;
+  used?: number;
+  remaining?: number;
+  resetAt?: string;
+}
+
+export interface ProviderUsageEntry {
+  provider: string;
+  creditsUsed?: number;
+  creditsRemaining?: number;
+  inputTokens?: number;
+  outputTokens?: number;
+  totalTokens?: number;
+  quota?: ProviderQuota;
+  error?: string;
+}
+
+export interface ProviderUsageResult {
+  providers: ProviderUsageEntry[];
+  [key: string]: unknown;
+}
